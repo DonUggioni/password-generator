@@ -1,0 +1,20 @@
+:root {
+  --cl-dark-gray-1: rgb(24, 23, 31);
+  --cl-dark-gray-2: rgb(36, 35, 44);
+  --cl-light-gray-1: rgb(128, 124, 146);
+  --cl-light-gray-2: rgb(230, 229, 234);
+  --cl-neon-green: rgb(164, 255, 175);
+  --cl-red: rgb(246, 74, 74);
+  --cl-orange: rgb(251, 124, 88);
+  --cl-yellow: rgb(248, 205, 101);
+
+  --fs-heading-l: 3.2rem;
+  --fs-heading-m: 2.4rem;
+
+  --fs-body-m: 1.8rem;
+}
+
+@font-face {
+  font-family: 'Jet Brains Mono';
+  src: url('../../assets/fonts/static/JetBrainsMono-Bold.ttf');
+}
