@@ -2,6 +2,7 @@
 
 const passLengthEl = document.querySelector('.range__value');
 const sliderEl = document.querySelector('.selectors__slider');
+const progressEl = document.querySelector('.selectors__progress');
 
 // Display the password character length
 const passLengthOutput = function () {
@@ -11,13 +12,8 @@ const passLengthOutput = function () {
 };
 passLengthOutput();
 
+// Adds different background to range slider
 sliderEl.addEventListener('input', function () {
   const value = sliderEl.value;
-  const color = `linear-gradient(
-        to right,
-        var(--cl-neon-green) ${value}%,
-        var(--cl-dark-gray-1) ${value}%
-      );`;
-
-  sliderEl.style.background = color;
+  progressEl.style.width = `${value * 5}%`;
 });

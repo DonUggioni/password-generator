@@ -92,6 +92,17 @@ body {
   font-size: var(--fs-heading-l);
   color: var(--cl-neon-green);
 }
+.selectors__range-box {
+  position: relative;
+}
+.selectors__progress {
+  position: absolute;
+  background-color: var(--cl-neon-green);
+  width: 0;
+  height: 0.8rem;
+  top: 0;
+  left: 0;
+}
 .selectors__slider {
   outline: none;
   -webkit-appearance: none;
@@ -111,6 +122,8 @@ body {
   cursor: pointer;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+  position: relative;
+  z-index: 2;
 }
 .selectors__slider::-webkit-slider-thumb:hover {
   background-color: var(--cl-dark-gray-1);

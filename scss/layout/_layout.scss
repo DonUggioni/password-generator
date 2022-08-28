@@ -60,6 +60,19 @@
     }
   }
 
+  &__range-box {
+    position: relative;
+  }
+
+  &__progress {
+    position: absolute;
+    background-color: var(--cl-neon-green);
+    width: 0;
+    height: 0.8rem;
+    top: 0;
+    left: 0;
+  }
+
   &__slider {
     outline: none;
     appearance: none;
@@ -81,6 +94,9 @@
     border-radius: 100%;
     cursor: pointer;
     transition: background-color 0.2s;
+
+    position: relative;
+    z-index: 2;
   }
 
   &__slider::-webkit-slider-thumb:hover {
