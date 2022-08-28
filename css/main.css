@@ -16,6 +16,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   min-height: 100vh;
   background-color: var(--cl-dark-gray-1);
 }
@@ -39,28 +40,94 @@ body {
   src: url("../../assets/fonts/static/JetBrainsMono-Bold.ttf");
 }
 .container {
-  max-width: 54rem;
+  width: 54rem;
 }
 .container__heading {
-  font-size: var(--fs-heading-l);
+  font-size: var(--fs-heading-m);
   color: var(--cl-light-gray-1);
+  margin-bottom: 3.2rem;
 }
 
-.card {
-  background-color: var(--cl-dark-gray-2);
-}
-.card .password {
+.password {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.9rem 3.2rem;
+  margin-bottom: 2.4rem;
+  background-color: var(--cl-dark-gray-2);
 }
-.card .password__copy-btn {
+.password__output {
+  font-size: var(--fs-heading-l);
+  color: var(--cl-light-gray-2);
+}
+.password__copy-btn {
   width: 2.1rem;
   height: 2.4rem;
   background-color: inherit;
   border: none;
   cursor: pointer;
 }
-.card .password__copy-btn .icon {
+.password__copy-btn .icon {
   width: 100%;
   height: 100%;
+}
+
+.selectors {
+  background-color: var(--cl-dark-gray-2);
+  padding: 2.4rem 3.2rem 3.2rem;
+}
+.selectors__text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.6rem;
+}
+.selectors__text .description {
+  font-size: var(--fs-body-m);
+  color: var(--cl-light-gray-2);
+}
+.selectors__text .range__value {
+  font-size: var(--fs-heading-l);
+  color: var(--cl-neon-green);
+}
+.selectors__slider {
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 0.8rem;
+  background: linear-gradient(to right, var(--cl-dark-gray-1) 50%, var(--cl-dark-gray-1) 50%);
+}
+.selectors__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+          appearance: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--cl-light-gray-2);
+  border-radius: 100%;
+  cursor: pointer;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.selectors__slider::-webkit-slider-thumb:hover {
+  background-color: var(--cl-dark-gray-1);
+  border: 2px solid var(--cl-neon-green);
+}
+.selectors__slider::-moz-range-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  width: 2.8rem;
+  height: 2.8rem;
+  background-color: var(--cl-light-gray-2);
+  border-radius: 100%;
+  cursor: pointer;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+.selectors__slider::-moz-range-thumb:hover {
+  background-color: var(--cl-dark-gray-1);
+  border: 2px solid var(--cl-neon-green);
 }/*# sourceMappingURL=main.css.map */

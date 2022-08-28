@@ -13,26 +13,41 @@
 
     <link rel="stylesheet" href="dist/css/main.min.css" />
 
+    <script defer src="js/app.js"></script>
+
     <title>Frontend Mentor | Password generator app</title>
   </head>
   <body>
     <main>
       <div class="container">
         <h2 class="container__heading">Password Generator</h2>
-        <div class="card">
-          <div class="password">
-            <h1 class="password__output">P4$5W0rD!</h1>
-            <button class="password__copy-btn">
-              <svg class="icon">
-                <use xlink:href="assets/images/sprite.svg#icon-copy"></use>
-              </svg>
-            </button>
+        <div class="password">
+          <h1 class="password__output">P4$5W0rD!</h1>
+          <button class="password__copy-btn">
+            <svg class="icon">
+              <use xlink:href="assets/images/sprite.svg#icon-copy"></use>
+            </svg>
+          </button>
+        </div>
+
+        <div class="selectors">
+          <div class="selectors__range-box">
+            <div class="selectors__text">
+              <span class="description">Character Length</span>
+              <span class="range__value" id="value">0</span>
+            </div>
+            <input
+              type="range"
+              min="0"
+              max="20"
+              value="0"
+              id="range"
+              class="selectors__slider"
+            />
+            <div class="selectors__progress"></div>
           </div>
         </div>
       </div>
     </main>
   </body>
 </html>
-
-Password Generator P4$5W0rD! Character Length Include Uppercase Letters Include
-Lowercase Letters Include Numbers Include Symbols Strength Generate
