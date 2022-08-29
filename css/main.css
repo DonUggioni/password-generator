@@ -58,6 +58,17 @@ body {
   padding: 1.9rem 3.2rem;
   margin-bottom: 2.4rem;
   background-color: var(--cl-dark-gray-2);
+  position: relative;
+}
+.password .copied__text {
+  position: absolute;
+  right: 7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-body-m);
+  color: var(--cl-neon-green);
+  text-transform: uppercase;
+  visibility: hidden;
 }
 .password__output {
   font-size: var(--fs-heading-l);
@@ -69,6 +80,11 @@ body {
   background-color: inherit;
   border: none;
   cursor: pointer;
+  fill: var(--cl-neon-green);
+  transition: all 0.2s;
+}
+.password__copy-btn:hover {
+  fill: var(--cl-light-gray-2);
 }
 .password__copy-btn .icon {
   width: 100%;
@@ -174,12 +190,82 @@ body {
   height: 2rem;
   border: 2px solid var(--cl-light-gray-2);
   transition: 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .selectors__check-box--container .check__box-label:hover::before, .selectors__check-box--container .check__box-input:hover + label::before {
   border: 2px solid var(--cl-neon-green);
 }
 .selectors__check-box--container .check__box-input:checked + label::before {
-  content: url("assets/images/sprite.svg#icon-check");
+  content: url("../../assets/images/icon-check.svg");
   background-color: var(--cl-neon-green);
   border: 2px solid var(--cl-neon-green);
+}
+
+.strength {
+  background-color: var(--cl-dark-gray-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.1rem 3.15rem;
+  margin-top: 1.2rem;
+  margin-bottom: 3.2rem;
+}
+.strength__text {
+  font-size: var(--fs-body-m);
+  color: var(--cl-light-gray-1);
+  text-transform: uppercase;
+}
+.strength__bars-box {
+  display: flex;
+  align-items: center;
+}
+.strength__level {
+  font-size: var(--fs-heading-m);
+  color: var(--cl-light-gray-2);
+  text-transform: uppercase;
+  margin-right: 1.55rem;
+}
+.strength__bar {
+  width: 1rem;
+  height: 2.8rem;
+  border: 2px solid var(--cl-light-gray-2);
+}
+.strength__bar:not(:last-child) {
+  margin-right: 0.8rem;
+}
+
+.generate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  background-color: var(--cl-neon-green);
+  border: 2px solid transparent;
+  width: 100%;
+  padding: 2rem 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.generate:hover {
+  background-color: transparent;
+  border: 2px solid var(--cl-neon-green);
+}
+.generate:hover > .generate__text {
+  color: var(--cl-neon-green);
+}
+.generate:hover > .generate__icon use {
+  fill: var(--cl-neon-green);
+}
+.generate__text {
+  font-size: var(--fs-body-m);
+  color: var(--cl-dark-gray-1);
+  text-transform: uppercase;
+  font-family: "Jet Brains Mono", sans-serif;
+}
+.generate__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: var(--cl-dark-gray-1);
 }/*# sourceMappingURL=main.css.map */

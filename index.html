@@ -23,6 +23,7 @@
         <h2 class="container__heading">Password Generator</h2>
         <div class="password">
           <h1 class="password__output">P4$5W0rD!</h1>
+          <p class="copied__text">Copied</p>
           <button class="password__copy-btn">
             <svg class="icon">
               <use xlink:href="assets/images/sprite.svg#icon-copy"></use>
@@ -97,7 +98,25 @@
                 >Include Symbols</label
               >
             </div>
+
+            <div class="strength">
+              <span class="strength__text">strength</span>
+              <div class="strength__bars-box">
+                <p class="strength__level">TEST</p>
+                <div class="strength__bar"></div>
+                <div class="strength__bar"></div>
+                <div class="strength__bar"></div>
+                <div class="strength__bar"></div>
+              </div>
+            </div>
           </div>
+
+          <button class="generate">
+            <p class="generate__text">Generate</p>
+            <svg class="generate__icon">
+              <use xlink:href="assets/images/sprite.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </main>
