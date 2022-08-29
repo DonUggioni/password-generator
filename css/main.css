@@ -72,7 +72,7 @@ body {
 }
 .password__output {
   font-size: var(--fs-heading-l);
-  color: var(--cl-light-gray-2);
+  color: var(--cl-light-gray-1);
 }
 .password__copy-btn {
   width: 2.1rem;
@@ -226,6 +226,26 @@ body {
   color: var(--cl-light-gray-2);
   text-transform: uppercase;
   margin-right: 1.55rem;
+}
+.strength__bars-container {
+  display: flex;
+  align-items: center;
+}
+.strength__bars-container[data-value="1"] :nth-child(1) {
+  background-color: var(--cl-red);
+  border: none;
+}
+.strength__bars-container[data-value="2"] :nth-child(-n+2) {
+  background-color: var(--cl-orange);
+  border: none;
+}
+.strength__bars-container[data-value="3"] :nth-child(-n+3) {
+  background-color: var(--cl-yellow);
+  border: none;
+}
+.strength__bars-container[data-value="4"] :nth-child(-n+4) {
+  background-color: var(--cl-neon-green);
+  border: none;
 }
 .strength__bar {
   width: 1rem;
