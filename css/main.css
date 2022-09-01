@@ -226,6 +226,7 @@ body {
   color: var(--cl-light-gray-2);
   text-transform: uppercase;
   margin-right: 1.55rem;
+  visibility: hidden;
 }
 .strength__bars-container {
   display: flex;

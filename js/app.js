@@ -11,6 +11,7 @@ const upperCaseCheckBox = document.getElementById('uppercase-char');
 const lowerCaseCheckBox = document.getElementById('lowercase-char');
 const numbersCheckBox = document.getElementById('numbers-char');
 const symbolsCheckBox = document.getElementById('symbols-char');
+const checkBoxGroup = document.querySelectorAll('.check__box-input');
 
 const UPPER_CASE_CHAR = arrayLowToHighNum(65, 90);
 const LOWER_CASE_CHAR = arrayLowToHighNum(97, 122);
@@ -29,6 +30,7 @@ passLengthOutput();
 
 // Clipboard function to copy password text
 const copyToClipboard = function () {
+  if (generatedPassEl.textContent === 'P4$5W0rD!') return;
   navigator.clipboard.writeText(generatedPassEl.textContent).then(() => {
     copiedTextEl.style.visibility = 'visible';
   });
@@ -62,7 +64,6 @@ const generatePassword = function () {
     password.push(String.fromCharCode(randomCharCode));
   }
 
-  console.log(password);
   generatedPassEl.textContent = password.join('');
   generatedPassEl.style.color = 'var(--cl-light-gray-2)';
 };
@@ -77,4 +78,44 @@ copyToClipboardBtn.addEventListener('click', copyToClipboard);
 
 generatePasswordBtn.addEventListener('click', function () {
   generatePassword();
+});
+
+// const passwordStrength = function (dataValue, message) {
+//   const boxArr = [];
+//   const barsDataValue = document
+//     .querySelector('.strength__bars-container')
+//     .setAttribute('data-value', dataValue);
+//   const strenghtLevel = document.querySelector('.strength__level');
+//   strenghtLevel.textContent = message;
+
+//   checkBoxGroup.forEach((box) => {
+//     box.addEventListener('click', function () {
+//       if (box.checked) boxArr.push(box);
+//     });
+//   });
+// };
+
+function passwordStrength(dataValue, message) {
+  const barsDataValue = document.querySelector('.strength__bars-container');
+  barsDataValue.setAttribute('data-value', dataValue);
+  const strenghtLevel = document.querySelector('.strength__level');
+  strenghtLevel.style.visibility = 'visible';
+  strenghtLevel.textContent = message;
+}
+
+sliderEl.addEventListener('input', function () {
+  const upperChecked = upperCaseCheckBox.checked;
+  const lowerChecked = lowerCaseCheckBox.checked;
+  const numbersChecked = numbersCheckBox.checked;
+  const symbolsChecked = symbolsCheckBox.checked;
+
+  const checkedBoxes = [];
+  const checkedArr = [
+    upperChecked,
+    lowerChecked,
+    numbersChecked,
+    symbolsChecked,
+  ].forEach((box) => {
+    if (box) checkedBoxes.push(box);
+  });
 });
