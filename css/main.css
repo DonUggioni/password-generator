@@ -10,6 +10,11 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
 }
+@media screen and (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
 
 body {
   font-family: "Jet Brains Mono", sans-serif;
@@ -49,6 +54,11 @@ body {
   color: var(--cl-light-gray-1);
   margin-bottom: 3.2rem;
 }
+@media screen and (max-width: 37.5em) {
+  .container {
+    width: 42rem;
+  }
+}
 
 .password {
   display: flex;
@@ -70,9 +80,15 @@ body {
   text-transform: uppercase;
   visibility: hidden;
 }
+.password__output-box {
+  width: 80%;
+  overflow: hidden;
+}
 .password__output {
   font-size: var(--fs-heading-l);
   color: var(--cl-light-gray-1);
+  display: flex;
+  flex-wrap: wrap;
 }
 .password__copy-btn {
   width: 2.1rem;
@@ -85,6 +101,11 @@ body {
 }
 .password__copy-btn:hover {
   fill: var(--cl-light-gray-2);
+}
+@media screen and (hover: none) {
+  .password__copy-btn:hover {
+    fill: var(--cl-neon-green);
+  }
 }
 .password__copy-btn .icon {
   width: 100%;
@@ -212,6 +233,11 @@ body {
   margin-top: 1.2rem;
   margin-bottom: 3.2rem;
 }
+@media screen and (hover: none) {
+  .strength {
+    padding: 2.1rem 2.15rem;
+  }
+}
 .strength__text {
   font-size: var(--fs-body-m);
   color: var(--cl-light-gray-1);
@@ -273,11 +299,27 @@ body {
   background-color: transparent;
   border: 2px solid var(--cl-neon-green);
 }
+@media screen and (hover: none) {
+  .generate:hover {
+    background-color: var(--cl-neon-green);
+    border: 2px solid transparent;
+  }
+}
 .generate:hover > .generate__text {
   color: var(--cl-neon-green);
 }
+@media screen and (hover: none) {
+  .generate:hover > .generate__text {
+    color: inherit;
+  }
+}
 .generate:hover > .generate__icon use {
   fill: var(--cl-neon-green);
+}
+@media screen and (hover: none) {
+  .generate:hover > .generate__icon use {
+    fill: inherit;
+  }
 }
 .generate__text {
   font-size: var(--fs-body-m);

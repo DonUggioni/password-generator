@@ -12,6 +12,10 @@
     color: var(--cl-light-gray-1);
     margin-bottom: 3.2rem;
   }
+
+  @media screen and (max-width: 37.5em) {
+    width: 42rem;
+  }
 }
 
 .password {
@@ -35,9 +39,16 @@
     visibility: hidden;
   }
 
+  &__output-box {
+    width: 80%;
+    overflow: hidden;
+  }
+
   &__output {
     font-size: var(--fs-heading-l);
     color: var(--cl-light-gray-1);
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__copy-btn {
@@ -51,6 +62,10 @@
 
     &:hover {
       fill: var(--cl-light-gray-2);
+
+      @media screen and (hover: none) {
+        fill: var(--cl-neon-green);
+      }
     }
 
     .icon {
@@ -204,6 +219,10 @@
   margin-top: 1.2rem;
   margin-bottom: 3.2rem;
 
+  @media screen and (hover: none) {
+    padding: 2.1rem 2.15rem;
+  }
+
   &__text {
     font-size: var(--fs-body-m);
     color: var(--cl-light-gray-1);
@@ -271,14 +290,27 @@
   &:hover {
     background-color: transparent;
     border: 2px solid var(--cl-neon-green);
+
+    @media screen and (hover: none) {
+      background-color: var(--cl-neon-green);
+      border: 2px solid transparent;
+    }
   }
 
   &:hover > &__text {
     color: var(--cl-neon-green);
+
+    @media screen and (hover: none) {
+      color: inherit;
+    }
   }
 
   &:hover > &__icon use {
     fill: var(--cl-neon-green);
+
+    @media screen and (hover: none) {
+      fill: inherit;
+    }
   }
 
   &__text {

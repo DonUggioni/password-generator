@@ -66,35 +66,11 @@ const generatePassword = function () {
 
   generatedPassEl.textContent = password.join('');
   generatedPassEl.style.color = 'var(--cl-light-gray-2)';
+
+  // return password;
 };
 
-// Adds different background to range slider
-sliderEl.addEventListener('input', function () {
-  const value = sliderEl.value;
-  progressEl.style.width = `${value * 5}%`;
-});
-
-copyToClipboardBtn.addEventListener('click', copyToClipboard);
-
-generatePasswordBtn.addEventListener('click', function () {
-  generatePassword();
-});
-
-// const passwordStrength = function (dataValue, message) {
-//   const boxArr = [];
-//   const barsDataValue = document
-//     .querySelector('.strength__bars-container')
-//     .setAttribute('data-value', dataValue);
-//   const strenghtLevel = document.querySelector('.strength__level');
-//   strenghtLevel.textContent = message;
-
-//   checkBoxGroup.forEach((box) => {
-//     box.addEventListener('click', function () {
-//       if (box.checked) boxArr.push(box);
-//     });
-//   });
-// };
-
+// Displayes password strenght values
 function passwordStrength(dataValue, message) {
   const barsDataValue = document.querySelector('.strength__bars-container');
   barsDataValue.setAttribute('data-value', dataValue);
@@ -103,19 +79,47 @@ function passwordStrength(dataValue, message) {
   strenghtLevel.textContent = message;
 }
 
-sliderEl.addEventListener('input', function () {
-  const upperChecked = upperCaseCheckBox.checked;
-  const lowerChecked = lowerCaseCheckBox.checked;
-  const numbersChecked = numbersCheckBox.checked;
-  const symbolsChecked = symbolsCheckBox.checked;
+// Tests for password strength
+function testPassword(password) {
+  let strength = 0;
 
-  const checkedBoxes = [];
-  const checkedArr = [
-    upperChecked,
-    lowerChecked,
-    numbersChecked,
-    symbolsChecked,
-  ].forEach((box) => {
-    if (box) checkedBoxes.push(box);
-  });
+  if (password === 'P4$5W0rD!') return;
+
+  strength += /[A-Z]+/.test(password) ? 1 : 0;
+  strength += /[a-z]+/.test(password) ? 1 : 0;
+  strength += /[0-9]+/.test(password) ? 1 : 0;
+  strength += /[\W]+/.test(password) ? 1 : 0;
+
+  switch (strength) {
+    case 1:
+      passwordStrength(1, 'Too weak!');
+      break;
+    case 2:
+      passwordStrength(2, 'Weak');
+      break;
+    case 3:
+      passwordStrength(3, 'Medium');
+      break;
+    case 4:
+      passwordStrength(4, 'Strong');
+      break;
+    default:
+      passwordStrength(0, '');
+      break;
+  }
+}
+
+// Adds different background to range slider
+sliderEl.addEventListener('input', function () {
+  const value = sliderEl.value;
+  progressEl.style.width = `${value * 5}%`;
+});
+
+// Copy to clipboard button
+copyToClipboardBtn.addEventListener('click', copyToClipboard);
+
+// Generate password button
+generatePasswordBtn.addEventListener('click', function () {
+  generatePassword();
+  testPassword(generatedPassEl.textContent);
 });
