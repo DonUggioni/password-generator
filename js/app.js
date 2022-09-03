@@ -26,7 +26,6 @@ const passLengthOutput = function () {
     passwordLengthEl.textContent = this.value;
   };
 };
-passLengthOutput();
 
 // Clipboard function to copy password text
 const copyToClipboard = function () {
@@ -73,8 +72,9 @@ const generatePassword = function () {
 // Displayes password strenght values
 function passwordStrength(dataValue, message) {
   const barsDataValue = document.querySelector('.strength__bars-container');
-  barsDataValue.setAttribute('data-value', dataValue);
   const strenghtLevel = document.querySelector('.strength__level');
+
+  barsDataValue.setAttribute('data-value', dataValue);
   strenghtLevel.style.visibility = 'visible';
   strenghtLevel.textContent = message;
 }
@@ -112,6 +112,7 @@ function testPassword(password) {
 // Adds different background to range slider
 sliderEl.addEventListener('input', function () {
   const value = sliderEl.value;
+  passLengthOutput();
   progressEl.style.width = `${value * 5}%`;
 });
 
